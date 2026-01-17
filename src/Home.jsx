@@ -9,14 +9,14 @@ const Home = () => {
   const [todos, setTodos] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:3000/get')
+    axios.get('https://todolist-1-udkx.onrender.com/get')
     .then(result => setTodos(result.data))
     .catch(err => console.log(err))
 
   },[])
 
   const handleEdit = (id) => {
-  axios.put('http://localhost:3000/update/' + id)
+  axios.put('https://todolist-1-udkx.onrender.com/update/' + id)
     .then(result => {
       location.reload()
     })
@@ -24,7 +24,7 @@ const Home = () => {
 };
 
   const handleDelete = (id)=> {
-    axios.delete('http://localhost:3000/delete/' + id)
+    axios.delete('https://todolist-1-udkx.onrender.com/delete/' + id)
     .then(result => {
       location.reload()
     })
